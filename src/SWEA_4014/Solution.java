@@ -76,13 +76,15 @@ public class Solution {
 						if(countX[i][j-1]>=X)
 						{
 							if(j-X>=0) {
+								boolean check=true;
 							for(int idx=j-1;idx>=j-X;idx--)
 							{
 								if(countX[i][idx]==-1)
 								{
-									break;
+									check=false;
 								}
 							}
+							if(!check)break;
 							countX[i][j-1]=-1;
 							}
 						}
@@ -123,13 +125,15 @@ public class Solution {
 						if(countY[j-1][i]>=X)
 						{
 							if(j-X>=0) {
+								boolean check=true;
 								for(int idx=j-1;idx>=j-X;idx--)
 								{
 									if(countY[idx][i]==-1)
 									{
-										break;
+										check=false;
 									}
 								}
+								if(!check)break;
 								countY[j-1][i]=-1;
 							}
 						}
